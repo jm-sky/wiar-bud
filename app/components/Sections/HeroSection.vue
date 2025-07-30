@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useI18n } from '#imports'
 import { Button } from '@/components/ui/button'
-import DevMadeItLogo from '../Logo/DevMadeItLogo.vue'
+import DevMadeItLogo from '../Logo/CompanyLogo.vue'
 
 const { t } = useI18n()
 </script>

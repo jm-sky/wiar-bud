@@ -1,5 +1,9 @@
 export const config = {
   appName: 'WIARBUD',
+  logo: {
+    highlight: 'WIAR',
+    normal: 'BUD',
+  },
   company: {
     name: 'WIARBUD Pavlo Baida',
     owner: 'Pavlo Baida',
