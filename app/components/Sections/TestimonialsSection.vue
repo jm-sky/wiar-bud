@@ -2,7 +2,8 @@
 import BaseSection from '@/components/Sections/BaseSection.vue';
 import TestimonialCard from '@/components/Cards/TestimonialCard.vue';
 
-const { t } = useI18n();
+const { t } = useI18n()
+const { slideUp, delayed } = useAnimationConfig()
 
 const testimonials = [
   {
@@ -19,6 +20,9 @@ const testimonials = [
     <TestimonialCard
       v-for="testimonial in testimonials"
       :key="`${testimonial.author}-${testimonial.date}`"
+      v-motion
+      :initial="slideUp.initial"
+      :visible-once="delayed(slideUp.visibleOnce, 100)"
       :author="testimonial.author"
       :date="testimonial.date"
       :location="testimonial.location"

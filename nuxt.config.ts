@@ -7,16 +7,30 @@ export default defineNuxtConfig({
   app: {
     head: {
       htmlAttrs: {
-        lang: 'en'
+        lang: 'pl'
       }
     }
   },
-  modules: ['@nuxt/eslint', '@nuxt/ui', 'shadcn-nuxt', '@nuxtjs/i18n'],
+  modules: ['@nuxt/eslint', '@nuxt/ui', 'shadcn-nuxt', '@nuxtjs/i18n', '@vueuse/motion/nuxt'],
   css: ['~/assets/css/index.css'],
   vite: {
     plugins: [
       tailwindcss(),
     ],
+  },
+  // Global animation configuration
+  runtimeConfig: {
+    public: {
+      motion: {
+        // Global animation defaults
+        transition: {
+          duration: 400,
+          ease: 'easeOut'
+        },
+        // Respect user preferences
+        respectMotionPreferences: true
+      }
+    }
   },
   shadcn: {
     prefix: '',

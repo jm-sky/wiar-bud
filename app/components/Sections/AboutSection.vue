@@ -5,13 +5,21 @@ import AboutCard from '../Cards/AboutCard.vue'
 import List from '../List/List.vue'
 import ListItem from '../List/ListItem.vue'
 import BaseSection from './BaseSection.vue'
+import { useAnimationConfig } from '@/composables/useAnimationConfig'
 
 const { t } = useI18n()
+const { slideUp, delayed } = useAnimationConfig()
 </script>
 
 <template>
   <BaseSection id="about" :title="t('about.title')">
-    <AboutCard :title="t('about.whatWeDo.title')" class="leading-relaxed">
+    <AboutCard
+      v-motion
+      :initial="slideUp.initial"
+      :visible-once="delayed(slideUp.visibleOnce, 100)"
+      :title="t('about.whatWeDo.title')"
+      class="leading-relaxed"
+    >
       <p class="text-muted-foreground mb-4">
         {{ t('about.whatWeDo.description') }}
       </p>
@@ -26,7 +34,13 @@ const { t } = useI18n()
         <ListItem>{{ t('about.whatWeDo.renovation') }}</ListItem>
       </List>
     </AboutCard>
-    <AboutCard :title="t('about.values.title')" class="leading-relaxed">
+    <AboutCard
+      v-motion
+      :initial="slideUp.initial"
+      :visible-once="delayed(slideUp.visibleOnce, 200)"
+      :title="t('about.values.title')"
+      class="leading-relaxed"
+    >
       <p class="text-muted-foreground mb-4">
         {{ t('about.values.description') }}
       </p>
@@ -39,7 +53,13 @@ const { t } = useI18n()
         <ListItem>{{ t('about.values.materials') }}</ListItem>
       </List>
     </AboutCard>
-    <AboutCard :title="t('about.company.title')" class="leading-relaxed">
+    <AboutCard
+      v-motion
+      :initial="slideUp.initial"
+      :visible-once="delayed(slideUp.visibleOnce, 300)"
+      :title="t('about.company.title')"
+      class="leading-relaxed"
+    >
       <p class="text-muted-foreground mb-4">
         {{ t('about.company.description') }}
       </p>
