@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useI18n } from '#imports'
 import BaseSection from '@/components/Sections/BaseSection.vue';
 import TestimonialCard from '@/components/Cards/TestimonialCard.vue';
 
